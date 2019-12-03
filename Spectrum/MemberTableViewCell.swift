@@ -9,7 +9,15 @@
 import UIKit
 
 class MemberTableViewCell: UITableViewCell {
-
+    @IBOutlet weak var labelName: UILabel!
+    
+    @IBOutlet weak var labelAge: UILabel!
+    @IBOutlet weak var imageFavourateStar: UIImageView!
+    
+    @IBOutlet weak var labelEmailId: UILabel!
+    
+    @IBOutlet weak var lablePhoneNumber: UILabel!
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
