@@ -17,24 +17,12 @@ class MemberTableViewCell: UITableViewCell {
     
     static let identifier = "MemberTableViewCell"
     
-    var memberInfo: MemberInfo! {
+    var memberViewModel: MemberViewModel! {
         didSet {
-            labelName.text = "\(memberInfo?.name?.first ?? "") \(memberInfo?.name?.last ?? "")"
-            labelAge.text =  String(memberInfo?.age ?? 0)
-            labelEmailId.text = memberInfo?.email ?? ""
-            lablePhoneNumber.text = memberInfo?.phone ?? ""
+            labelName.text = memberViewModel.name
+            labelAge.text =  memberViewModel.age
+            labelEmailId.text = memberViewModel.email
+            lablePhoneNumber.text = memberViewModel.phone
         }
     }
-    
-    override func awakeFromNib() {
-        super.awakeFromNib()
-        // Initialization code
-    }
-
-    override func setSelected(_ selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
-
-        // Configure the view for the selected state
-    }
-
 }

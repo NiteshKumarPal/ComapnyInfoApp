@@ -20,6 +20,11 @@
 		96F9A5A22396C75000824745 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96F9A5992396C74F00824745 /* SceneDelegate.swift */; };
 		96F9A5A82396C7E500824745 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 96F9A5A42396C7E500824745 /* LaunchScreen.storyboard */; };
 		96F9A5A92396C7E500824745 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 96F9A5A62396C7E500824745 /* Main.storyboard */; };
+		96F9A5AC2396CB4600824745 /* CompanyViewPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96F9A5AB2396CB4600824745 /* CompanyViewPresenter.swift */; };
+		96F9A5AE2396CB6600824745 /* MemberViewPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96F9A5AD2396CB6600824745 /* MemberViewPresenter.swift */; };
+		96F9A5B22396CD6E00824745 /* WebserviceAdapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96F9A5B12396CD6E00824745 /* WebserviceAdapter.swift */; };
+		96F9A5B42396D0C800824745 /* CompanyWebService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96F9A5B32396D0C800824745 /* CompanyWebService.swift */; };
+		96F9A5B62396D4DA00824745 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96F9A5B52396D4DA00824745 /* Constants.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -59,6 +64,11 @@
 		96F9A5992396C74F00824745 /* SceneDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		96F9A5A52396C7E500824745 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		96F9A5A72396C7E500824745 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		96F9A5AB2396CB4600824745 /* CompanyViewPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompanyViewPresenter.swift; sourceTree = "<group>"; };
+		96F9A5AD2396CB6600824745 /* MemberViewPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemberViewPresenter.swift; sourceTree = "<group>"; };
+		96F9A5B12396CD6E00824745 /* WebserviceAdapter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebserviceAdapter.swift; sourceTree = "<group>"; };
+		96F9A5B32396D0C800824745 /* CompanyWebService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompanyWebService.swift; sourceTree = "<group>"; };
+		96F9A5B52396D4DA00824745 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -113,6 +123,8 @@
 				96F9A5A32396C7E500824745 /* Storyboards */,
 				96F9A5952396C74F00824745 /* Models */,
 				96F9A58E2396C74F00824745 /* Modules */,
+				96F9A5B02396CCFF00824745 /* Services */,
+				96F9A5AF2396CCFF00824745 /* Utility */,
 				96F9A58A2396C74F00824745 /* SupportingFiles */,
 			);
 			path = Spectrum;
@@ -160,6 +172,8 @@
 			children = (
 				96F9A5902396C74F00824745 /* CompanyTabelCell.swift */,
 				96F9A5912396C74F00824745 /* CompanyViewController.swift */,
+				96F9A5AB2396CB4600824745 /* CompanyViewPresenter.swift */,
+				96F9A5B32396D0C800824745 /* CompanyWebService.swift */,
 			);
 			path = CompanyScreen;
 			sourceTree = "<group>";
@@ -169,6 +183,7 @@
 			children = (
 				96F9A5932396C74F00824745 /* MemberViewController.swift */,
 				96F9A5942396C74F00824745 /* MemberTableViewCell.swift */,
+				96F9A5AD2396CB6600824745 /* MemberViewPresenter.swift */,
 			);
 			path = MemberScreen;
 			sourceTree = "<group>";
@@ -186,6 +201,7 @@
 			children = (
 				96F9A5982396C74F00824745 /* AppDelegate.swift */,
 				96F9A5992396C74F00824745 /* SceneDelegate.swift */,
+				96F9A5B52396D4DA00824745 /* Constants.swift */,
 			);
 			path = CommonClasses;
 			sourceTree = "<group>";
@@ -197,6 +213,21 @@
 				96F9A5A62396C7E500824745 /* Main.storyboard */,
 			);
 			path = Storyboards;
+			sourceTree = "<group>";
+		};
+		96F9A5AF2396CCFF00824745 /* Utility */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Utility;
+			sourceTree = "<group>";
+		};
+		96F9A5B02396CCFF00824745 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				96F9A5B12396CD6E00824745 /* WebserviceAdapter.swift */,
+			);
+			path = Services;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -330,11 +361,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				96F9A5B22396CD6E00824745 /* WebserviceAdapter.swift in Sources */,
 				96F9A5A12396C75000824745 /* AppDelegate.swift in Sources */,
+				96F9A5AE2396CB6600824745 /* MemberViewPresenter.swift in Sources */,
 				96F9A59D2396C75000824745 /* CompanyViewController.swift in Sources */,
 				96F9A5A22396C75000824745 /* SceneDelegate.swift in Sources */,
 				96F9A59F2396C75000824745 /* MemberTableViewCell.swift in Sources */,
 				96F9A59A2396C74F00824745 /* Spectrum.xcdatamodeld in Sources */,
+				96F9A5B62396D4DA00824745 /* Constants.swift in Sources */,
+				96F9A5AC2396CB4600824745 /* CompanyViewPresenter.swift in Sources */,
+				96F9A5B42396D0C800824745 /* CompanyWebService.swift in Sources */,
 				96F9A5A02396C75000824745 /* CompanyModel.swift in Sources */,
 				96F9A59E2396C75000824745 /* MemberViewController.swift in Sources */,
 				96F9A59C2396C74F00824745 /* CompanyTabelCell.swift in Sources */,

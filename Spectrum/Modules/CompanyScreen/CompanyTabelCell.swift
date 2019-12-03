@@ -17,12 +17,12 @@ class CompanyTabelCell: UITableViewCell {
     
     static let identifier = "CompanyTabelCell"
     
-    var companyInfo: CompanyInfo? {
+    var companyViewModel: CompanyViewModel? {
         didSet {
             //imageViewCompanyLogo.image =
             labelFollow.text = "following"
-            labelCompanyName.text = companyInfo?.companyName
-            labelCompanyDescription.text = companyInfo?.description
+            labelCompanyName.text = companyViewModel?.companyName
+            labelCompanyDescription.text = companyViewModel?.description
         }
     }
     
