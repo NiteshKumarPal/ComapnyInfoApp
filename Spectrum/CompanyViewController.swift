@@ -44,4 +44,10 @@ extension CompanyViewController: UITableViewDelegate, UITableViewDataSource {
         cell.companyInfo = companyList[indexPath.row]
         return cell
     }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let memberViewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(identifier: "MemberViewController") as MemberViewController
+        memberViewController.memberList = companyList[indexPath.row].memberInfoList ?? []
+        self.navigationController?.pushViewController(memberViewController, animated: true)
+    }
 }
