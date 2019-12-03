@@ -7,20 +7,19 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		9673F1792391993200986D57 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9673F1782391993200986D57 /* AppDelegate.swift */; };
-		9673F17B2391993200986D57 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9673F17A2391993200986D57 /* SceneDelegate.swift */; };
-		9673F17D2391993200986D57 /* CompanyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9673F17C2391993200986D57 /* CompanyViewController.swift */; };
-		9673F1802391993200986D57 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9673F17E2391993200986D57 /* Main.storyboard */; };
-		9673F1832391993200986D57 /* Spectrum.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 9673F1812391993200986D57 /* Spectrum.xcdatamodeld */; };
 		9673F1852391993400986D57 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9673F1842391993400986D57 /* Assets.xcassets */; };
-		9673F1882391993400986D57 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9673F1862391993400986D57 /* LaunchScreen.storyboard */; };
 		9673F1932391993400986D57 /* SpectrumTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9673F1922391993400986D57 /* SpectrumTests.swift */; };
 		9673F19E2391993400986D57 /* SpectrumUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9673F19D2391993400986D57 /* SpectrumUITests.swift */; };
-		9673F1AC2391A39C00986D57 /* CompanyTabelCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9673F1AB2391A39C00986D57 /* CompanyTabelCell.swift */; };
-		9673F1AE2391A42D00986D57 /* SpectrumData.json in Resources */ = {isa = PBXBuildFile; fileRef = 9673F1AD2391A42D00986D57 /* SpectrumData.json */; };
-		9673F1B02391A55C00986D57 /* CompanyModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9673F1AF2391A55C00986D57 /* CompanyModel.swift */; };
-		96F9A57F2396042300824745 /* MemberViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96F9A57E2396042300824745 /* MemberViewController.swift */; };
-		96F9A581239608DA00824745 /* MemberTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96F9A580239608DA00824745 /* MemberTableViewCell.swift */; };
+		96F9A59A2396C74F00824745 /* Spectrum.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 96F9A58B2396C74F00824745 /* Spectrum.xcdatamodeld */; };
+		96F9A59C2396C74F00824745 /* CompanyTabelCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96F9A5902396C74F00824745 /* CompanyTabelCell.swift */; };
+		96F9A59D2396C75000824745 /* CompanyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96F9A5912396C74F00824745 /* CompanyViewController.swift */; };
+		96F9A59E2396C75000824745 /* MemberViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96F9A5932396C74F00824745 /* MemberViewController.swift */; };
+		96F9A59F2396C75000824745 /* MemberTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96F9A5942396C74F00824745 /* MemberTableViewCell.swift */; };
+		96F9A5A02396C75000824745 /* CompanyModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96F9A5962396C74F00824745 /* CompanyModel.swift */; };
+		96F9A5A12396C75000824745 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96F9A5982396C74F00824745 /* AppDelegate.swift */; };
+		96F9A5A22396C75000824745 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96F9A5992396C74F00824745 /* SceneDelegate.swift */; };
+		96F9A5A82396C7E500824745 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 96F9A5A42396C7E500824745 /* LaunchScreen.storyboard */; };
+		96F9A5A92396C7E500824745 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 96F9A5A62396C7E500824745 /* Main.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -42,25 +41,24 @@
 
 /* Begin PBXFileReference section */
 		9673F1752391993200986D57 /* Spectrum.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Spectrum.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		9673F1782391993200986D57 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		9673F17A2391993200986D57 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		9673F17C2391993200986D57 /* CompanyViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompanyViewController.swift; sourceTree = "<group>"; };
-		9673F17F2391993200986D57 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		9673F1822391993200986D57 /* Spectrum.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Spectrum.xcdatamodel; sourceTree = "<group>"; };
 		9673F1842391993400986D57 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		9673F1872391993400986D57 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
-		9673F1892391993400986D57 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		9673F18E2391993400986D57 /* SpectrumTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SpectrumTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		9673F1922391993400986D57 /* SpectrumTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpectrumTests.swift; sourceTree = "<group>"; };
 		9673F1942391993400986D57 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		9673F1992391993400986D57 /* SpectrumUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SpectrumUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		9673F19D2391993400986D57 /* SpectrumUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpectrumUITests.swift; sourceTree = "<group>"; };
 		9673F19F2391993400986D57 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		9673F1AB2391A39C00986D57 /* CompanyTabelCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompanyTabelCell.swift; sourceTree = "<group>"; };
-		9673F1AD2391A42D00986D57 /* SpectrumData.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = SpectrumData.json; sourceTree = "<group>"; };
-		9673F1AF2391A55C00986D57 /* CompanyModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompanyModel.swift; sourceTree = "<group>"; };
-		96F9A57E2396042300824745 /* MemberViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemberViewController.swift; sourceTree = "<group>"; };
-		96F9A580239608DA00824745 /* MemberTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemberTableViewCell.swift; sourceTree = "<group>"; };
+		96F9A58C2396C74F00824745 /* Spectrum.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Spectrum.xcdatamodel; sourceTree = "<group>"; };
+		96F9A58D2396C74F00824745 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		96F9A5902396C74F00824745 /* CompanyTabelCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CompanyTabelCell.swift; sourceTree = "<group>"; };
+		96F9A5912396C74F00824745 /* CompanyViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CompanyViewController.swift; sourceTree = "<group>"; };
+		96F9A5932396C74F00824745 /* MemberViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MemberViewController.swift; sourceTree = "<group>"; };
+		96F9A5942396C74F00824745 /* MemberTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MemberTableViewCell.swift; sourceTree = "<group>"; };
+		96F9A5962396C74F00824745 /* CompanyModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CompanyModel.swift; sourceTree = "<group>"; };
+		96F9A5982396C74F00824745 /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		96F9A5992396C74F00824745 /* SceneDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
+		96F9A5A52396C7E500824745 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		96F9A5A72396C7E500824745 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -111,19 +109,11 @@
 		9673F1772391993200986D57 /* Spectrum */ = {
 			isa = PBXGroup;
 			children = (
-				9673F1782391993200986D57 /* AppDelegate.swift */,
-				9673F17A2391993200986D57 /* SceneDelegate.swift */,
-				9673F17C2391993200986D57 /* CompanyViewController.swift */,
-				96F9A57E2396042300824745 /* MemberViewController.swift */,
-				96F9A580239608DA00824745 /* MemberTableViewCell.swift */,
-				9673F17E2391993200986D57 /* Main.storyboard */,
-				9673F1842391993400986D57 /* Assets.xcassets */,
-				9673F1862391993400986D57 /* LaunchScreen.storyboard */,
-				9673F1892391993400986D57 /* Info.plist */,
-				9673F1812391993200986D57 /* Spectrum.xcdatamodeld */,
-				9673F1AB2391A39C00986D57 /* CompanyTabelCell.swift */,
-				9673F1AD2391A42D00986D57 /* SpectrumData.json */,
-				9673F1AF2391A55C00986D57 /* CompanyModel.swift */,
+				96F9A5972396C74F00824745 /* CommonClasses */,
+				96F9A5A32396C7E500824745 /* Storyboards */,
+				96F9A5952396C74F00824745 /* Models */,
+				96F9A58E2396C74F00824745 /* Modules */,
+				96F9A58A2396C74F00824745 /* SupportingFiles */,
 			);
 			path = Spectrum;
 			sourceTree = "<group>";
@@ -144,6 +134,69 @@
 				9673F19F2391993400986D57 /* Info.plist */,
 			);
 			path = SpectrumUITests;
+			sourceTree = "<group>";
+		};
+		96F9A58A2396C74F00824745 /* SupportingFiles */ = {
+			isa = PBXGroup;
+			children = (
+				96F9A58B2396C74F00824745 /* Spectrum.xcdatamodeld */,
+				9673F1842391993400986D57 /* Assets.xcassets */,
+				96F9A58D2396C74F00824745 /* Info.plist */,
+			);
+			path = SupportingFiles;
+			sourceTree = "<group>";
+		};
+		96F9A58E2396C74F00824745 /* Modules */ = {
+			isa = PBXGroup;
+			children = (
+				96F9A58F2396C74F00824745 /* CompanyScreen */,
+				96F9A5922396C74F00824745 /* MemberScreen */,
+			);
+			path = Modules;
+			sourceTree = "<group>";
+		};
+		96F9A58F2396C74F00824745 /* CompanyScreen */ = {
+			isa = PBXGroup;
+			children = (
+				96F9A5902396C74F00824745 /* CompanyTabelCell.swift */,
+				96F9A5912396C74F00824745 /* CompanyViewController.swift */,
+			);
+			path = CompanyScreen;
+			sourceTree = "<group>";
+		};
+		96F9A5922396C74F00824745 /* MemberScreen */ = {
+			isa = PBXGroup;
+			children = (
+				96F9A5932396C74F00824745 /* MemberViewController.swift */,
+				96F9A5942396C74F00824745 /* MemberTableViewCell.swift */,
+			);
+			path = MemberScreen;
+			sourceTree = "<group>";
+		};
+		96F9A5952396C74F00824745 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				96F9A5962396C74F00824745 /* CompanyModel.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		96F9A5972396C74F00824745 /* CommonClasses */ = {
+			isa = PBXGroup;
+			children = (
+				96F9A5982396C74F00824745 /* AppDelegate.swift */,
+				96F9A5992396C74F00824745 /* SceneDelegate.swift */,
+			);
+			path = CommonClasses;
+			sourceTree = "<group>";
+		};
+		96F9A5A32396C7E500824745 /* Storyboards */ = {
+			isa = PBXGroup;
+			children = (
+				96F9A5A42396C7E500824745 /* LaunchScreen.storyboard */,
+				96F9A5A62396C7E500824745 /* Main.storyboard */,
+			);
+			path = Storyboards;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -250,10 +303,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				9673F1882391993400986D57 /* LaunchScreen.storyboard in Resources */,
-				9673F1AE2391A42D00986D57 /* SpectrumData.json in Resources */,
+				96F9A5A82396C7E500824745 /* LaunchScreen.storyboard in Resources */,
 				9673F1852391993400986D57 /* Assets.xcassets in Resources */,
-				9673F1802391993200986D57 /* Main.storyboard in Resources */,
+				96F9A5A92396C7E500824745 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -278,14 +330,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				9673F1832391993200986D57 /* Spectrum.xcdatamodeld in Sources */,
-				96F9A57F2396042300824745 /* MemberViewController.swift in Sources */,
-				9673F17D2391993200986D57 /* CompanyViewController.swift in Sources */,
-				9673F1792391993200986D57 /* AppDelegate.swift in Sources */,
-				9673F1AC2391A39C00986D57 /* CompanyTabelCell.swift in Sources */,
-				9673F17B2391993200986D57 /* SceneDelegate.swift in Sources */,
-				9673F1B02391A55C00986D57 /* CompanyModel.swift in Sources */,
-				96F9A581239608DA00824745 /* MemberTableViewCell.swift in Sources */,
+				96F9A5A12396C75000824745 /* AppDelegate.swift in Sources */,
+				96F9A59D2396C75000824745 /* CompanyViewController.swift in Sources */,
+				96F9A5A22396C75000824745 /* SceneDelegate.swift in Sources */,
+				96F9A59F2396C75000824745 /* MemberTableViewCell.swift in Sources */,
+				96F9A59A2396C74F00824745 /* Spectrum.xcdatamodeld in Sources */,
+				96F9A5A02396C75000824745 /* CompanyModel.swift in Sources */,
+				96F9A59E2396C75000824745 /* MemberViewController.swift in Sources */,
+				96F9A59C2396C74F00824745 /* CompanyTabelCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -321,20 +373,20 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		9673F17E2391993200986D57 /* Main.storyboard */ = {
+		96F9A5A42396C7E500824745 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
-				9673F17F2391993200986D57 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
-		9673F1862391993400986D57 /* LaunchScreen.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				9673F1872391993400986D57 /* Base */,
+				96F9A5A52396C7E500824745 /* Base */,
 			);
 			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+		96F9A5A62396C7E500824745 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				96F9A5A72396C7E500824745 /* Base */,
+			);
+			name = Main.storyboard;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
@@ -460,7 +512,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = V3R4329N82;
-				INFOPLIST_FILE = Spectrum/Info.plist;
+				INFOPLIST_FILE = Spectrum/SupportingFiles/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -478,7 +530,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = V3R4329N82;
-				INFOPLIST_FILE = Spectrum/Info.plist;
+				INFOPLIST_FILE = Spectrum/SupportingFiles/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -616,12 +668,12 @@
 /* End XCConfigurationList section */
 
 /* Begin XCVersionGroup section */
-		9673F1812391993200986D57 /* Spectrum.xcdatamodeld */ = {
+		96F9A58B2396C74F00824745 /* Spectrum.xcdatamodeld */ = {
 			isa = XCVersionGroup;
 			children = (
-				9673F1822391993200986D57 /* Spectrum.xcdatamodel */,
+				96F9A58C2396C74F00824745 /* Spectrum.xcdatamodel */,
 			);
-			currentVersion = 9673F1822391993200986D57 /* Spectrum.xcdatamodel */;
+			currentVersion = 96F9A58C2396C74F00824745 /* Spectrum.xcdatamodel */;
 			path = Spectrum.xcdatamodeld;
 			sourceTree = "<group>";
 			versionGroupType = wrapper.xcdatamodel;

@@ -190,7 +190,7 @@
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Mark Favorate:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CBA-PW-XIy">
-                                                            <rect key="frame" x="265" y="36.5" width="115" height="21"/>
+                                                            <rect key="frame" x="256" y="36.5" width="115" height="21"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="width" constant="115" id="01D-8y-ehA"/>
                                                                 <constraint firstAttribute="height" constant="21" id="SEA-8I-8cx"/>
@@ -216,9 +216,9 @@
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="abcd.abcd@gmail.com" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="seg-oh-JuB">
-                                                            <rect key="frame" x="75" y="66" width="322" height="21"/>
+                                                            <rect key="frame" x="69" y="66" width="328" height="21"/>
                                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                            <nil key="textColor"/>
+                                                            <color key="textColor" systemColor="linkColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Phone no:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Hbg-P4-kfb">
@@ -231,9 +231,9 @@
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="9090875757" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XBT-Tz-Qcr">
-                                                            <rect key="frame" x="106" y="95" width="291" height="21"/>
+                                                            <rect key="frame" x="100" y="95" width="297" height="21"/>
                                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                            <nil key="textColor"/>
+                                                            <color key="textColor" systemColor="linkColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                     </subviews>
@@ -251,10 +251,10 @@
                                                         <constraint firstItem="6VI-Bb-6yx" firstAttribute="top" secondItem="Yld-bc-8c9" secondAttribute="bottom" constant="8" id="Pg6-sT-gpe"/>
                                                         <constraint firstItem="TVe-nk-qhQ" firstAttribute="top" secondItem="eCi-CP-6GK" secondAttribute="top" constant="8" id="dAA-AD-J4Z"/>
                                                         <constraint firstItem="wAV-br-aZw" firstAttribute="top" secondItem="eCi-CP-6GK" secondAttribute="top" constant="8" id="dc2-M7-Afx"/>
-                                                        <constraint firstItem="XBT-Tz-Qcr" firstAttribute="leading" secondItem="Hbg-P4-kfb" secondAttribute="trailing" constant="14" id="jEd-sO-tSE"/>
-                                                        <constraint firstItem="OcB-hg-3yn" firstAttribute="leading" secondItem="CBA-PW-XIy" secondAttribute="trailing" constant="-1" id="knT-nM-Q6j"/>
+                                                        <constraint firstItem="XBT-Tz-Qcr" firstAttribute="leading" secondItem="Hbg-P4-kfb" secondAttribute="trailing" constant="8" id="jEd-sO-tSE"/>
+                                                        <constraint firstItem="OcB-hg-3yn" firstAttribute="leading" secondItem="CBA-PW-XIy" secondAttribute="trailing" constant="8" id="knT-nM-Q6j"/>
                                                         <constraint firstItem="Yld-bc-8c9" firstAttribute="top" secondItem="TVe-nk-qhQ" secondAttribute="bottom" constant="8" id="mGc-lg-e31"/>
-                                                        <constraint firstItem="seg-oh-JuB" firstAttribute="leading" secondItem="6VI-Bb-6yx" secondAttribute="trailing" constant="14" id="mPC-0h-VbF"/>
+                                                        <constraint firstItem="seg-oh-JuB" firstAttribute="leading" secondItem="6VI-Bb-6yx" secondAttribute="trailing" constant="8" id="mPC-0h-VbF"/>
                                                         <constraint firstItem="bIN-kK-Kua" firstAttribute="leading" secondItem="Yld-bc-8c9" secondAttribute="trailing" constant="8" id="oNN-Lo-h5F"/>
                                                         <constraint firstItem="wAV-br-aZw" firstAttribute="leading" secondItem="eCi-CP-6GK" secondAttribute="leading" constant="15" id="oa3-P3-bNu"/>
                                                         <constraint firstItem="Yld-bc-8c9" firstAttribute="leading" secondItem="wAV-br-aZw" secondAttribute="leading" id="pYP-Z7-HoN"/>
