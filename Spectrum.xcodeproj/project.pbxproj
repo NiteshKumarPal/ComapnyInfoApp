@@ -11,6 +11,8 @@
 		962AAAAD2399709F00F632EB /* ImageUtility.swift in Sources */ = {isa = PBXBuildFile; fileRef = 962AAAAC2399709F00F632EB /* ImageUtility.swift */; };
 		962AAAAF2399859200F632EB /* LoaderUtility.swift in Sources */ = {isa = PBXBuildFile; fileRef = 962AAAAE2399859200F632EB /* LoaderUtility.swift */; };
 		962AAAB12399892500F632EB /* CommonUtility.swift in Sources */ = {isa = PBXBuildFile; fileRef = 962AAAB02399892500F632EB /* CommonUtility.swift */; };
+		962AAAB323998F7F00F632EB /* CompanyViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 962AAAB223998F7F00F632EB /* CompanyViewModel.swift */; };
+		962AAAB52399912700F632EB /* MemberViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 962AAAB42399912700F632EB /* MemberViewModel.swift */; };
 		9673F1852391993400986D57 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9673F1842391993400986D57 /* Assets.xcassets */; };
 		9673F1932391993400986D57 /* SpectrumTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9673F1922391993400986D57 /* SpectrumTests.swift */; };
 		9673F19E2391993400986D57 /* SpectrumUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9673F19D2391993400986D57 /* SpectrumUITests.swift */; };
@@ -52,6 +54,8 @@
 		962AAAAC2399709F00F632EB /* ImageUtility.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageUtility.swift; sourceTree = "<group>"; };
 		962AAAAE2399859200F632EB /* LoaderUtility.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoaderUtility.swift; sourceTree = "<group>"; };
 		962AAAB02399892500F632EB /* CommonUtility.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommonUtility.swift; sourceTree = "<group>"; };
+		962AAAB223998F7F00F632EB /* CompanyViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompanyViewModel.swift; sourceTree = "<group>"; };
+		962AAAB42399912700F632EB /* MemberViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemberViewModel.swift; sourceTree = "<group>"; };
 		9673F1752391993200986D57 /* Spectrum.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Spectrum.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9673F1842391993400986D57 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		9673F18E2391993400986D57 /* SpectrumTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SpectrumTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -180,6 +184,7 @@
 			children = (
 				96F9A5902396C74F00824745 /* CompanyTabelCell.swift */,
 				96F9A5912396C74F00824745 /* CompanyViewController.swift */,
+				962AAAB223998F7F00F632EB /* CompanyViewModel.swift */,
 				96F9A5AB2396CB4600824745 /* CompanyViewPresenter.swift */,
 				96F9A5B32396D0C800824745 /* CompanyWebService.swift */,
 			);
@@ -191,6 +196,7 @@
 			children = (
 				96F9A5932396C74F00824745 /* MemberViewController.swift */,
 				96F9A5942396C74F00824745 /* MemberTableViewCell.swift */,
+				962AAAB42399912700F632EB /* MemberViewModel.swift */,
 				96F9A5AD2396CB6600824745 /* MemberViewPresenter.swift */,
 			);
 			path = MemberScreen;
@@ -383,8 +389,10 @@
 				96F9A5A12396C75000824745 /* AppDelegate.swift in Sources */,
 				96F9A5AE2396CB6600824745 /* MemberViewPresenter.swift in Sources */,
 				96F9A59D2396C75000824745 /* CompanyViewController.swift in Sources */,
+				962AAAB323998F7F00F632EB /* CompanyViewModel.swift in Sources */,
 				96F9A5A22396C75000824745 /* SceneDelegate.swift in Sources */,
 				96F9A59F2396C75000824745 /* MemberTableViewCell.swift in Sources */,
+				962AAAB52399912700F632EB /* MemberViewModel.swift in Sources */,
 				96F9A59A2396C74F00824745 /* Spectrum.xcdatamodeld in Sources */,
 				96F9A5B62396D4DA00824745 /* Constants.swift in Sources */,
 				96F9A5AC2396CB4600824745 /* CompanyViewPresenter.swift in Sources */,

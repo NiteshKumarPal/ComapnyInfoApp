@@ -12,15 +12,15 @@ class CompanyViewController: UIViewController, CompanyViewPresenterViewDelegate 
    
     @IBOutlet weak var tableViewCompanyList: UITableView!
     
-    var presenter = CompanyViewPresenter()
+    var companyViewPresenter = CompanyViewPresenter()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        presenter.companyViewPresenterViewDelegate = self
+        companyViewPresenter.companyViewPresenterViewDelegate = self
         
         fetchCompanyInfoData()
-        title = presenter.title
+        title = CompanyPresenterConstants.title
         
         navigationItem.searchController = UISearchController()
         navigationItem.hidesSearchBarWhenScrolling = true
@@ -29,7 +29,7 @@ class CompanyViewController: UIViewController, CompanyViewPresenterViewDelegate 
     func fetchCompanyInfoData() {
         view.showBlurEffectLoader()
         
-        presenter.fetchCompanyInfoData() { [weak self] in
+        companyViewPresenter.fetchCompanyInfoData() { [weak self] in
             CommonUtility.mainThread {
                 self?.view.removeBlurEffectLoader()
             }
@@ -45,7 +45,7 @@ class CompanyViewController: UIViewController, CompanyViewPresenterViewDelegate 
 
 extension CompanyViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return presenter.companyViewModelList.count
+        return companyViewPresenter.companyViewModelList.count
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
@@ -54,15 +54,15 @@ extension CompanyViewController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: CompanyTabelCell.identifier, for: indexPath) as! CompanyTabelCell
-        cell.companyViewModel = presenter.companyViewModelList[indexPath.row]
-        cell.presenter = presenter
+        cell.companyViewModel = companyViewPresenter.companyViewModelList[indexPath.row]
+        cell.presenter = companyViewPresenter
         return cell
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let memberViewController = StoryBoards.kMain.instantiateViewController(identifier: ViewControllers.kMemberViewController) as MemberViewController
         
-        memberViewController.memberViewPresenter.memberInfoList = presenter.companyViewModelList[indexPath.row].memberViewModelList ?? []
+        memberViewController.memberViewPresenter.memberInfoList = companyViewPresenter.companyViewModelList[indexPath.row].memberViewModelList ?? []
         
         self.navigationController?.pushViewController(memberViewController, animated: true)
     }

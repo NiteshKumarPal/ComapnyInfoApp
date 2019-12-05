@@ -8,7 +8,13 @@
 
 import Foundation
 
+protocol MemberViewPresenterViewDelegate: class {
+    func reloadData()
+}
+
 class MemberViewPresenter {
     var memberInfoList = [MemberViewModel]()
+    weak var memberViewPresenterViewDelegate: MemberViewPresenterViewDelegate?
+    
     let title = "Member list"
 }

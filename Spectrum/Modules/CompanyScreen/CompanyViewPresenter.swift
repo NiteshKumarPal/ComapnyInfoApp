@@ -9,51 +9,6 @@
 import Foundation
 import UIKit
 
-typealias FollowUIInfo = (followText: String, followImage: UIImage)
-
-class CompanyViewModel {
-    var id = ""
-    var companyName = ""
-    var logo: URL?
-    var description = ""
-    var website: URL?
-    var memberViewModelList: [MemberViewModel]? = []
-    var isFollowing = false {
-        didSet {
-            updateFollowUIInfo(isFollowed: isFollowing)
-        }
-    }
-    var followingText = "Follow"
-    var followImage = UIImage(systemName: "hand.thumbsup")
-    
-    init() {}
-    
-    func updateFollowUIInfo(isFollowed: Bool) {
-        followingText = isFollowing ? CompanyPresenterConstants.followingInfo.followText :
-            CompanyPresenterConstants.unFollowingInfo.followText
-        
-        followImage = isFollowing ? CompanyPresenterConstants.followingInfo.followImage :
-            CompanyPresenterConstants.unFollowingInfo.followImage
-    }
-}
-
-class MemberViewModel {
-    var id = ""
-    var age = ""
-    var name = ""
-    var email = ""
-    var phone = ""
-    var isFavourate = false
-    
-    init() {}
-}
-
-struct CompanyPresenterConstants {
-   static let followingInfo: FollowUIInfo = (followText: "Following", followImage: UIImage(systemName: "hand.thumbsup.fill") ?? UIImage())
-    
-   static let unFollowingInfo: FollowUIInfo = (followText: "Follow", followImage: UIImage(systemName: "hand.thumbsup") ?? UIImage())
-}
-
 protocol CompanyViewPresenterViewDelegate: class {
     func reloadData()
 }
@@ -63,10 +18,6 @@ class CompanyViewPresenter {
     let companyWebService: CompanyWebServiceInterface? = CompanyWebService()
     var companyViewModelList = [CompanyViewModel]()
     weak var companyViewPresenterViewDelegate: CompanyViewPresenterViewDelegate?
-    
-    let title = "Company list"
-    let follow = "Follow"
-    let following = "Following"
     
     func fetchCompanyInfoData(completion: (() -> Void)? = nil) {
         companyWebService?.fetchCompanyInfoList { [weak self] (companyInfoList) in
@@ -118,12 +69,5 @@ class CompanyViewPresenter {
         }
         
         return memberViewModelList
-    }
-    
-    func followCompany(companyIndex: Int) {
-        if !companyViewModelList.isEmpty && companyViewModelList.indices.contains(companyIndex) {
-            companyViewModelList[companyIndex].isFollowing = !companyViewModelList[companyIndex].isFollowing
-            companyViewPresenterViewDelegate?.reloadData()
-        }
     }
 }

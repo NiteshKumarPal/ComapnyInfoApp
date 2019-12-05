@@ -14,15 +14,39 @@ class MemberTableViewCell: UITableViewCell {
     @IBOutlet weak var imageFavourateStar: UIImageView!
     @IBOutlet weak var labelEmailId: UILabel!
     @IBOutlet weak var lablePhoneNumber: UILabel!
+    @IBOutlet weak var viewFavorite: UIView!
     
     static let identifier = "MemberTableViewCell"
     
-    var memberViewModel: MemberViewModel! {
+    var presenter: MemberViewPresenter?
+    var memberViewModel: MemberViewModel? {
         didSet {
+            
+            guard let memberViewModel = memberViewModel else {
+                return
+            }
+            
             labelName.text = memberViewModel.name
             labelAge.text =  memberViewModel.age
             labelEmailId.text = memberViewModel.email
             lablePhoneNumber.text = memberViewModel.phone
+            imageFavourateStar.image = memberViewModel.favourateImage
         }
+    }
+    
+    override func awakeFromNib() {
+           super.awakeFromNib()
+           // Initialization code
+           
+           let tap = UITapGestureRecognizer(target: self, action: #selector(self.tapAction(_:)))
+           viewFavorite.addGestureRecognizer(tap)
+       }
+       
+    @objc func tapAction(_ sender: UITapGestureRecognizer? = nil) {
+        guard let memberViewModel = memberViewModel else {
+            return
+        }
+        memberViewModel.isFavorite = !memberViewModel.isFavorite
+        presenter?.memberViewPresenterViewDelegate?.reloadData()
     }
 }

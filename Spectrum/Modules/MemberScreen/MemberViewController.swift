@@ -8,7 +8,7 @@
 
 import UIKit
 
-class MemberViewController: UIViewController {
+class MemberViewController: UIViewController, MemberViewPresenterViewDelegate {
     
     @IBOutlet weak var tableViewMemberList: UITableView!
     
@@ -16,11 +16,23 @@ class MemberViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
+        memberViewPresenter.memberViewPresenterViewDelegate = self
+        navigationBarUISetup()
+        reloadData()
+    }
+    
+    func navigationBarUISetup() {
         title = memberViewPresenter.title
         navigationItem.largeTitleDisplayMode = .never
         navigationItem.searchController = UISearchController()
         navigationItem.hidesSearchBarWhenScrolling = true
+    }
+    
+    func reloadData() {
+        CommonUtility.mainThread { [weak self] in
+            self?.tableViewMemberList.reloadData()
+        }
     }
 }
 
@@ -37,6 +49,7 @@ extension MemberViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: MemberTableViewCell.identifier, for: indexPath) as! MemberTableViewCell
         cell.memberViewModel = memberViewPresenter.memberInfoList[indexPath.row]
+        cell.presenter = memberViewPresenter
         return cell
     }
 }
