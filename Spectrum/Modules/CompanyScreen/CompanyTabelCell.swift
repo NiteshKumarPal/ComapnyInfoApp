@@ -15,8 +15,10 @@ class CompanyTabelCell: UITableViewCell {
     @IBOutlet weak var labelCompanyDescription: UILabel!
     @IBOutlet weak var labelFollow: UILabel!
     @IBOutlet weak var imageViewFollow: UIImageView!
+    @IBOutlet weak var imageFavorite: UIImageView!
     @IBOutlet weak var viewFollow: UIView!
     
+    @IBOutlet weak var viewFavorite: UIView!
     weak var presenter: CompanyViewPresenter?
     
     static let identifier = "CompanyTabelCell"
@@ -30,6 +32,7 @@ class CompanyTabelCell: UITableViewCell {
             labelCompanyName.text = companyViewModel.companyName
             labelCompanyDescription.text = companyViewModel.description
             imageViewCompanyLogo.loadImage(url: companyViewModel.logo)
+            imageFavorite.image = companyViewModel.favoriteImage
         }
     }
     
@@ -37,14 +40,22 @@ class CompanyTabelCell: UITableViewCell {
         super.awakeFromNib()
         // Initialization code
         
-        let tap = UITapGestureRecognizer(target: self, action: #selector(self.tapAction(_:)))
-        viewFollow.addGestureRecognizer(tap)
+        let tapOnFollow = UITapGestureRecognizer(target: self, action: #selector(self.tapActionOnFollow(_:)))
+        viewFollow.addGestureRecognizer(tapOnFollow)
+        
+        let tapOnFavorite = UITapGestureRecognizer(target: self, action: #selector(self.tapActionOnFavorite))
+        viewFavorite.addGestureRecognizer(tapOnFavorite)
     }
     
-    @objc func tapAction(_ sender: UITapGestureRecognizer? = nil) {
-        if let companyViewModel = companyViewModel {
-            companyViewModel.isFollowing = !companyViewModel.isFollowing
-            presenter?.companyViewPresenterViewDelegate?.reloadData()
-        }
+    @objc func tapActionOnFollow(_ sender: UITapGestureRecognizer? = nil) {
+        guard let companyViewModel = companyViewModel else { return }
+        companyViewModel.isFollowing = !companyViewModel.isFollowing
+        presenter?.companyViewPresenterViewDelegate?.reloadData()
+    }
+    
+    @objc func tapActionOnFavorite(_ sender: UITapGestureRecognizer? = nil) {
+        guard let companyViewModel = companyViewModel else { return }
+        companyViewModel.isFavorite = !companyViewModel.isFavorite
+        presenter?.companyViewPresenterViewDelegate?.reloadData()
     }
 }

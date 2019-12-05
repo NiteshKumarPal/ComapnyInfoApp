@@ -17,6 +17,8 @@ class CompanyViewPresenter {
     
     let companyWebService: CompanyWebServiceInterface? = CompanyWebService()
     var companyViewModelList = [CompanyViewModel]()
+    var searchResult = [CompanyViewModel]()
+    
     weak var companyViewPresenterViewDelegate: CompanyViewPresenterViewDelegate?
     
     func fetchCompanyInfoData(completion: (() -> Void)? = nil) {
@@ -70,4 +72,8 @@ class CompanyViewPresenter {
         
         return memberViewModelList
     }
+    
+//    func getSearchResult(searchText: String) -> [CompanyViewModel]?  {
+//
+//    }
 }

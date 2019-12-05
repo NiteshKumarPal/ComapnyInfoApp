@@ -25,6 +25,8 @@ class CompanyViewModel {
     }
     var followingText = CompanyPresenterConstants.unFollowingInfo.followText
     var followImage = CompanyPresenterConstants.unFollowingInfo.followImage
+    var isFavorite = false
+    var favoriteImage: UIImage { return UIImage(systemName: isFavorite ? "star.fill" : "star") ?? UIImage() }
     
     init() {}
     
