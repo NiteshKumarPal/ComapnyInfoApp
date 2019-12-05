@@ -10,4 +10,5 @@ import Foundation
 
 class MemberViewPresenter {
     var memberInfoList = [MemberViewModel]()
+    let title = "Member list"
 }

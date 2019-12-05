@@ -7,8 +7,11 @@
 //
 
 import Foundation
+import UIKit
 
 typealias Urls = Constants.Urls
+typealias ViewControllers = Constants.ViewControllers
+typealias StoryBoards = Constants.StoryBoards
 
 struct Constants {
     
@@ -18,5 +21,14 @@ struct Constants {
         private init() {}
         
         static let kCompanyUrl = "https://next.json-generator.com/api/json/get/Vk-LhK44U"
+    }
+    
+    struct ViewControllers {
+        static var kCompanyViewController = "CompanyViewController"
+        static var kMemberViewController = "MemberViewController"
+    }
+    
+    struct StoryBoards {
+        static let kMain = UIStoryboard(name: "Main", bundle: nil)
     }
 }

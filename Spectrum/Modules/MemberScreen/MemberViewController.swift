@@ -17,7 +17,10 @@ class MemberViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
+        title = memberViewPresenter.title
+        navigationItem.largeTitleDisplayMode = .never
+        navigationItem.searchController = UISearchController()
+        navigationItem.hidesSearchBarWhenScrolling = true
     }
 }
 

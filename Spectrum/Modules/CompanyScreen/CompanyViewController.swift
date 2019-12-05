@@ -14,16 +14,30 @@ class CompanyViewController: UIViewController, CompanyViewPresenterViewDelegate 
     
     var presenter = CompanyViewPresenter()
     
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         
         presenter.companyViewPresenterViewDelegate = self
-        presenter.fetchCompanyInfoData()
+        
+        fetchCompanyInfoData()
+        title = presenter.title
+        
+        navigationItem.searchController = UISearchController()
+        navigationItem.hidesSearchBarWhenScrolling = true
+    }
+    
+    func fetchCompanyInfoData() {
+        view.showBlurEffectLoader()
+        
+        presenter.fetchCompanyInfoData() { [weak self] in
+            CommonUtility.mainThread {
+                self?.view.removeBlurEffectLoader()
+            }
+        }
     }
     
     func reloadData() {
-        DispatchQueue.main.async { [weak self] in
+        CommonUtility.mainThread { [weak self] in
             self?.tableViewCompanyList.reloadData()
         }
     }
@@ -41,11 +55,12 @@ extension CompanyViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: CompanyTabelCell.identifier, for: indexPath) as! CompanyTabelCell
         cell.companyViewModel = presenter.companyViewModelList[indexPath.row]
+        cell.presenter = presenter
         return cell
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let memberViewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(identifier: "MemberViewController") as MemberViewController
+        let memberViewController = StoryBoards.kMain.instantiateViewController(identifier: ViewControllers.kMemberViewController) as MemberViewController
         
         memberViewController.memberViewPresenter.memberInfoList = presenter.companyViewModelList[indexPath.row].memberViewModelList ?? []
         

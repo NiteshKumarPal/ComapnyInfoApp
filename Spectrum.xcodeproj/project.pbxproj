@@ -3,10 +3,14 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 52;
 	objects = {
 
 /* Begin PBXBuildFile section */
+		962AAAAB2399703800F632EB /* SDWebImage in Frameworks */ = {isa = PBXBuildFile; productRef = 962AAAAA2399703800F632EB /* SDWebImage */; };
+		962AAAAD2399709F00F632EB /* ImageUtility.swift in Sources */ = {isa = PBXBuildFile; fileRef = 962AAAAC2399709F00F632EB /* ImageUtility.swift */; };
+		962AAAAF2399859200F632EB /* LoaderUtility.swift in Sources */ = {isa = PBXBuildFile; fileRef = 962AAAAE2399859200F632EB /* LoaderUtility.swift */; };
+		962AAAB12399892500F632EB /* CommonUtility.swift in Sources */ = {isa = PBXBuildFile; fileRef = 962AAAB02399892500F632EB /* CommonUtility.swift */; };
 		9673F1852391993400986D57 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9673F1842391993400986D57 /* Assets.xcassets */; };
 		9673F1932391993400986D57 /* SpectrumTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9673F1922391993400986D57 /* SpectrumTests.swift */; };
 		9673F19E2391993400986D57 /* SpectrumUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9673F19D2391993400986D57 /* SpectrumUITests.swift */; };
@@ -45,6 +49,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		962AAAAC2399709F00F632EB /* ImageUtility.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageUtility.swift; sourceTree = "<group>"; };
+		962AAAAE2399859200F632EB /* LoaderUtility.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoaderUtility.swift; sourceTree = "<group>"; };
+		962AAAB02399892500F632EB /* CommonUtility.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommonUtility.swift; sourceTree = "<group>"; };
 		9673F1752391993200986D57 /* Spectrum.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Spectrum.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9673F1842391993400986D57 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		9673F18E2391993400986D57 /* SpectrumTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SpectrumTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -76,6 +83,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				962AAAAB2399703800F632EB /* SDWebImage in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -218,6 +226,9 @@
 		96F9A5AF2396CCFF00824745 /* Utility */ = {
 			isa = PBXGroup;
 			children = (
+				962AAAAC2399709F00F632EB /* ImageUtility.swift */,
+				962AAAAE2399859200F632EB /* LoaderUtility.swift */,
+				962AAAB02399892500F632EB /* CommonUtility.swift */,
 			);
 			path = Utility;
 			sourceTree = "<group>";
@@ -246,6 +257,9 @@
 			dependencies = (
 			);
 			name = Spectrum;
+			packageProductDependencies = (
+				962AAAAA2399703800F632EB /* SDWebImage */,
+			);
 			productName = Spectrum;
 			productReference = 9673F1752391993200986D57 /* Spectrum.app */;
 			productType = "com.apple.product-type.application";
@@ -318,6 +332,9 @@
 				Base,
 			);
 			mainGroup = 9673F16C2391993200986D57;
+			packageReferences = (
+				962AAAA92399703800F632EB /* XCRemoteSwiftPackageReference "SDWebImage" */,
+			);
 			productRefGroup = 9673F1762391993200986D57 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -361,6 +378,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				962AAAAD2399709F00F632EB /* ImageUtility.swift in Sources */,
 				96F9A5B22396CD6E00824745 /* WebserviceAdapter.swift in Sources */,
 				96F9A5A12396C75000824745 /* AppDelegate.swift in Sources */,
 				96F9A5AE2396CB6600824745 /* MemberViewPresenter.swift in Sources */,
@@ -370,6 +388,8 @@
 				96F9A59A2396C74F00824745 /* Spectrum.xcdatamodeld in Sources */,
 				96F9A5B62396D4DA00824745 /* Constants.swift in Sources */,
 				96F9A5AC2396CB4600824745 /* CompanyViewPresenter.swift in Sources */,
+				962AAAAF2399859200F632EB /* LoaderUtility.swift in Sources */,
+				962AAAB12399892500F632EB /* CommonUtility.swift in Sources */,
 				96F9A5B42396D0C800824745 /* CompanyWebService.swift in Sources */,
 				96F9A5A02396C75000824745 /* CompanyModel.swift in Sources */,
 				96F9A59E2396C75000824745 /* MemberViewController.swift in Sources */,
@@ -702,6 +722,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		962AAAA92399703800F632EB /* XCRemoteSwiftPackageReference "SDWebImage" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/SDWebImage/SDWebImage";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.3.3;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		962AAAAA2399703800F632EB /* SDWebImage */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 962AAAA92399703800F632EB /* XCRemoteSwiftPackageReference "SDWebImage" */;
+			productName = SDWebImage;
+		};
+/* End XCSwiftPackageProductDependency section */
 
 /* Begin XCVersionGroup section */
 		96F9A58B2396C74F00824745 /* Spectrum.xcdatamodeld */ = {
