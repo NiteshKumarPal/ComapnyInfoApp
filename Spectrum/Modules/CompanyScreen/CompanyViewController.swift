@@ -14,7 +14,7 @@ class CompanyViewController: UIViewController, CompanyViewPresenterViewDelegate 
     let searchController = UISearchController()
     
     var isFiltering: Bool {
-      return searchController.isActive && !isSearchBarEmpty
+      return searchController.isActive && !isSearchBarEmpty || searchController.searchBar.selectedScopeButtonIndex > 0
     }
     
     var isSearchBarEmpty: Bool {
@@ -29,16 +29,18 @@ class CompanyViewController: UIViewController, CompanyViewPresenterViewDelegate 
         companyViewPresenter.companyViewPresenterViewDelegate = self
         
         fetchCompanyInfoData()
-        title = CompanyPresenterConstants.title
         
-        searchController.searchBar.placeholder = "Search by company name"
-        searchController.searchBar.scopeButtonTitles = ["Ascending", "Descending"]
+        title = CompanyPresenterConstants.kTitle
+        
+        setupSearchBar()
+    }
+    
+    func setupSearchBar() {
+        searchController.searchBar.placeholder = CompanyPresenterConstants.kPlaceholderTextcompanyName
+        searchController.searchBar.scopeButtonTitles = [CompanyPresenterConstants.kAscending, CompanyPresenterConstants.kDescending]
         searchController.searchResultsUpdater = self
         searchController.obscuresBackgroundDuringPresentation = false
         navigationItem.searchController = searchController
-        
-        definesPresentationContext = true
-      
         navigationItem.hidesSearchBarWhenScrolling = true
     }
     
@@ -85,14 +87,8 @@ extension CompanyViewController: UITableViewDelegate, UITableViewDataSource {
     }
 }
 
-extension CompanyViewController: UISearchBarDelegate {
-  func searchBar(_ searchBar: UISearchBar, selectedScopeButtonIndexDidChange selectedScope: Int) {
-    print(searchBar)
-  }
-}
-
 extension CompanyViewController: UISearchResultsUpdating {
     func updateSearchResults(for searchController: UISearchController) {
-        companyViewPresenter.updateSearchResult(searchText: searchController.searchBar.text ?? "")
+        companyViewPresenter.updateSearchResult(searchText: searchController.searchBar.text ?? "", scopeValue: searchController.searchBar.selectedScopeButtonIndex)
     }
 }

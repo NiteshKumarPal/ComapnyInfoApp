@@ -44,5 +44,9 @@ struct CompanyPresenterConstants {
     
     static let unFollowingInfo: FollowUIInfo = (followText: "Follow", followImage: UIImage(systemName: "hand.thumbsup") ?? UIImage())
     
-    static let title = "Company list"
+    static let kTitle = "Company list"
+    
+    static let kPlaceholderTextcompanyName = "Search by company name"
+    static let kAscending = "Ascending"
+    static let kDescending = "Descending"
 }
