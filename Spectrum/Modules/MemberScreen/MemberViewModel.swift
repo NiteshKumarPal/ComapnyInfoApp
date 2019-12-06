@@ -20,3 +20,14 @@ class MemberViewModel {
     
     init() {}
 }
+
+struct MemberViewPresenterConstants {
+    
+    static let kTitle = "Member list"
+    
+    static let kDefault = "Default"
+    static let kAgeUp = "Age ▲"
+    static let kAgeDown = "Age ▼"
+    static let kNameUp = "Name ▲"
+    static let kNameDown = "Name ▼"
+}

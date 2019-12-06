@@ -47,6 +47,7 @@ struct CompanyPresenterConstants {
     static let kTitle = "Company list"
     
     static let kPlaceholderTextcompanyName = "Search by company name"
+    static let kDefault = "Default"
     static let kAscending = "Ascending"
     static let kDescending = "Descending"
 }

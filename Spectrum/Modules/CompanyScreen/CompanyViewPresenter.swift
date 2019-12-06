@@ -15,6 +15,7 @@ protocol CompanyViewPresenterViewDelegate: class {
 
 extension CompanyViewPresenter {
     enum ComapnyResultSortType: Int {
+        case defaultCase
         case ascendng
         case descending
     }
@@ -88,7 +89,7 @@ class CompanyViewPresenter {
         return filterCompanyViewModelList
     }
     
-    func updateSearchResult(searchText: String, scopeValue: Int = 0) {
+    func updateSearchResult(searchText: String, scopeValue: Int) {
         searchResultFiltered = getSearchResult(searchText: searchText)
         let modelList = searchText.isEmpty ? companyViewModelList : searchResultFiltered
         searchResultFiltered = sortTheResultWith(modelList: modelList, scopeValue: scopeValue)
@@ -102,22 +103,23 @@ class CompanyViewPresenter {
     func sortTheResultWith(modelList: [CompanyViewModel], scopeValue: Int) -> [CompanyViewModel]  {
         let sortType = ComapnyResultSortType(rawValue: scopeValue)
         
-        var sotedCompanyViewModelList = [CompanyViewModel]()
+        var sortedCompanyViewModelList = [CompanyViewModel]()
         
         switch sortType {
+        case .defaultCase, .none:
+            sortedCompanyViewModelList = modelList
         case .ascendng:
-            sotedCompanyViewModelList = modelList.sorted(by: { (companyViewModelFirst, companyViewModelSecond) -> Bool in
-                companyViewModelFirst.companyName.localizedCaseInsensitiveCompare(companyViewModelSecond.companyName) == .orderedAscending
+            sortedCompanyViewModelList = modelList.sorted(by: { (companyViewModelFirst, companyViewModelSecond) -> Bool in
+                
+                companyViewModelFirst.companyName < companyViewModelSecond.companyName
             })
         case .descending:
-            sotedCompanyViewModelList = modelList.sorted(by: { (companyViewModelFirst, companyViewModelSecond) -> Bool in
+            sortedCompanyViewModelList = modelList.sorted(by: { (companyViewModelFirst, companyViewModelSecond) -> Bool in
                 
-                companyViewModelFirst.companyName.localizedCaseInsensitiveCompare(companyViewModelSecond.companyName) == .orderedDescending
+                companyViewModelFirst.companyName > companyViewModelSecond.companyName
             })
-        case .none:
-            break
         }
         
-        return sotedCompanyViewModelList
+        return sortedCompanyViewModelList
     }
 }

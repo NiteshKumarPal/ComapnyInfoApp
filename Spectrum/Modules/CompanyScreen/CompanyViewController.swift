@@ -37,7 +37,7 @@ class CompanyViewController: UIViewController, CompanyViewPresenterViewDelegate 
     
     func setupSearchBar() {
         searchController.searchBar.placeholder = CompanyPresenterConstants.kPlaceholderTextcompanyName
-        searchController.searchBar.scopeButtonTitles = [CompanyPresenterConstants.kAscending, CompanyPresenterConstants.kDescending]
+        searchController.searchBar.scopeButtonTitles = [CompanyPresenterConstants.kDefault, CompanyPresenterConstants.kAscending, CompanyPresenterConstants.kDescending]
         searchController.searchResultsUpdater = self
         searchController.obscuresBackgroundDuringPresentation = false
         navigationItem.searchController = searchController
@@ -81,10 +81,14 @@ extension CompanyViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let memberViewController = StoryBoards.kMain.instantiateViewController(identifier: ViewControllers.kMemberViewController) as MemberViewController
         
-        memberViewController.memberViewPresenter.memberInfoList = companyViewPresenter.getCompanyList(isFiltering: isFiltering)[indexPath.row].memberViewModelList ?? []
+        memberViewController.memberViewPresenter.memberViewModelList = companyViewPresenter.getCompanyList(isFiltering: isFiltering)[indexPath.row].memberViewModelList ?? []
         
         self.navigationController?.pushViewController(memberViewController, animated: true)
     }
+    
+    func scrollViewDidScroll(_ scrollView: UIScrollView) {
+           searchController.searchBar.resignFirstResponder()
+       }
 }
 
 extension CompanyViewController: UISearchResultsUpdating {

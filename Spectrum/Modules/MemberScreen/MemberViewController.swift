@@ -11,7 +11,15 @@ import UIKit
 class MemberViewController: UIViewController, MemberViewPresenterViewDelegate {
     
     @IBOutlet weak var tableViewMemberList: UITableView!
+    let searchController = UISearchController()
     
+    var isFiltering: Bool {
+        return searchController.isActive && !isSearchBarEmpty || searchController.searchBar.selectedScopeButtonIndex > 0
+    }
+    
+    var isSearchBarEmpty: Bool {
+        return searchController.searchBar.text?.isEmpty ?? true
+    }
     var memberViewPresenter = MemberViewPresenter()
     
     override func viewDidLoad() {
@@ -23,9 +31,24 @@ class MemberViewController: UIViewController, MemberViewPresenterViewDelegate {
     }
     
     func navigationBarUISetup() {
-        title = memberViewPresenter.title
+        title = MemberViewPresenterConstants.kTitle
         navigationItem.largeTitleDisplayMode = .never
-        navigationItem.searchController = UISearchController()
+        setupSearchBar()
+        navigationItem.hidesSearchBarWhenScrolling = true
+    }
+    
+    func setupSearchBar() {
+        searchController.searchBar.placeholder = CompanyPresenterConstants.kPlaceholderTextcompanyName
+        searchController.searchBar.scopeButtonTitles =
+            [MemberViewPresenterConstants.kDefault,
+             MemberViewPresenterConstants.kNameUp,
+             MemberViewPresenterConstants.kNameDown,
+             MemberViewPresenterConstants.kAgeUp,
+             MemberViewPresenterConstants.kAgeDown]
+        
+        searchController.searchResultsUpdater = self
+        searchController.obscuresBackgroundDuringPresentation = false
+        navigationItem.searchController = searchController
         navigationItem.hidesSearchBarWhenScrolling = true
     }
     
@@ -39,7 +62,7 @@ class MemberViewController: UIViewController, MemberViewPresenterViewDelegate {
 extension MemberViewController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return memberViewPresenter.memberInfoList.count
+        return memberViewPresenter.getMemberList(isFiltering: isFiltering).count
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
@@ -48,8 +71,18 @@ extension MemberViewController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: MemberTableViewCell.identifier, for: indexPath) as! MemberTableViewCell
-        cell.memberViewModel = memberViewPresenter.memberInfoList[indexPath.row]
+        cell.memberViewModel = memberViewPresenter.getMemberList(isFiltering: isFiltering)[indexPath.row]
         cell.presenter = memberViewPresenter
         return cell
+    }
+    
+    func scrollViewDidScroll(_ scrollView: UIScrollView) {
+        searchController.searchBar.resignFirstResponder()
+    }
+}
+
+extension MemberViewController: UISearchResultsUpdating {
+    func updateSearchResults(for searchController: UISearchController) {
+        memberViewPresenter.updateSearchResult(searchText: searchController.searchBar.text ?? "", scopeValue: searchController.searchBar.selectedScopeButtonIndex)
     }
 }
