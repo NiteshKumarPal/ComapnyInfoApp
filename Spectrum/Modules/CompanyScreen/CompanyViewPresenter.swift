@@ -18,6 +18,7 @@ class CompanyViewPresenter {
     let companyWebService: CompanyWebServiceInterface? = CompanyWebService()
     var companyViewModelList = [CompanyViewModel]()
     var searchResult = [CompanyViewModel]()
+    var searchResultFiltered = [CompanyViewModel]()
     
     weak var companyViewPresenterViewDelegate: CompanyViewPresenterViewDelegate?
     
@@ -73,7 +74,20 @@ class CompanyViewPresenter {
         return memberViewModelList
     }
     
-//    func getSearchResult(searchText: String) -> [CompanyViewModel]?  {
-//
-//    }
+    func getSearchResult(searchText: String) -> [CompanyViewModel]  {
+        let filterCompanyViewModelList = companyViewModelList.filter { (companyViewModel) -> Bool in
+            return companyViewModel.companyName.lowercased().contains(searchText.lowercased())
+        }
+        
+        return filterCompanyViewModelList
+    }
+    
+    func updateSearchResult(searchText: String) {
+        searchResultFiltered = getSearchResult(searchText: searchText)
+        companyViewPresenterViewDelegate?.reloadData()
+    }
+    
+    func getCompanyList(isFiltering: Bool) -> [CompanyViewModel] {
+        isFiltering ? searchResultFiltered : companyViewModelList
+    }
 }

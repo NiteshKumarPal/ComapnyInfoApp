@@ -13,12 +13,11 @@ class CompanyTabelCell: UITableViewCell {
     @IBOutlet weak var imageViewCompanyLogo: UIImageView!
     @IBOutlet weak var labelCompanyName: UILabel!
     @IBOutlet weak var labelCompanyDescription: UILabel!
-    @IBOutlet weak var labelFollow: UILabel!
     @IBOutlet weak var imageViewFollow: UIImageView!
     @IBOutlet weak var imageFavorite: UIImageView!
     @IBOutlet weak var viewFollow: UIView!
-    
     @IBOutlet weak var viewFavorite: UIView!
+    
     weak var presenter: CompanyViewPresenter?
     
     static let identifier = "CompanyTabelCell"
@@ -27,7 +26,7 @@ class CompanyTabelCell: UITableViewCell {
         didSet {
             guard let companyViewModel = companyViewModel else { return }
             
-            labelFollow.text = companyViewModel.followingText
+            //labelFollow.text = companyViewModel.followingText
             imageViewFollow.image = companyViewModel.followImage
             labelCompanyName.text = companyViewModel.companyName
             labelCompanyDescription.text = companyViewModel.description
