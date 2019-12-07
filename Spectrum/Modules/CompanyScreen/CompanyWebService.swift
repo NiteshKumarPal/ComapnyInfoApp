@@ -30,11 +30,9 @@ class CompanyWebService: CompanyWebServiceInterface {
                 let companyList = try decoder.decode([CompanyInfo].self, from:
                     dataResponse)
                 
-                print(companyList)
                 completionWithCompanyListInfo(companyList)
                 
             } catch let parsingError {
-                print("Error", parsingError)
                 completionWithCompanyListInfo(nil)
             }
             

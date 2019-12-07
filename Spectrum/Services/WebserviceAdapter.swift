@@ -21,19 +21,16 @@ class WebserviceAdapter {
             guard let dataResponse = data,
                 error == nil else {
                     
-                    print(error?.localizedDescription ?? "Response Error")
                     completionWithError(error)
                     return }
             do {
                 //here dataResponse received from a network request
                 let jsonResponse = try JSONSerialization.jsonObject(with:
                     dataResponse, options: [])
-                print(jsonResponse)
                 
                 completionWithResponse(jsonResponse, dataResponse)
                 
             } catch let parsingError {
-                print("Error", parsingError)
                 completionWithError(parsingError)
             }
             
