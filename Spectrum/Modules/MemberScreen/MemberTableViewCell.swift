@@ -48,6 +48,8 @@ class MemberTableViewCell: UITableViewCell {
         let phoneTap = UITapGestureRecognizer(target: self, action: #selector(self.tapOnPhoneAction))
         labelPhoneNumber.isUserInteractionEnabled = true
         labelPhoneNumber.addGestureRecognizer(phoneTap)
+        
+        setupCardViewEffect()
     }
     
     @objc func tapOnFavoriteAction(_ sender: UITapGestureRecognizer? = nil) {

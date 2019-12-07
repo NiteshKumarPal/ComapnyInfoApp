@@ -10,6 +10,7 @@ import UIKit
 
 class MemberViewController: UIViewController, MemberViewPresenterViewDelegate {
     
+    @IBOutlet weak var labelCompanyName: UILabel!
     @IBOutlet weak var tableViewMemberList: UITableView!
     let searchController = UISearchController()
     
@@ -27,6 +28,7 @@ class MemberViewController: UIViewController, MemberViewPresenterViewDelegate {
         
         memberViewPresenter.memberViewPresenterViewDelegate = self
         navigationBarUISetup()
+        setupTableView()
         reloadData()
     }
     
@@ -50,6 +52,12 @@ class MemberViewController: UIViewController, MemberViewPresenterViewDelegate {
         searchController.obscuresBackgroundDuringPresentation = false
         navigationItem.searchController = searchController
         navigationItem.hidesSearchBarWhenScrolling = true
+    }
+    
+    func setupTableView() {
+        labelCompanyName.attributedText = memberViewPresenter.getCompanyInfo()
+        tableViewMemberList.tableFooterView = UIView()
+        tableViewMemberList.separatorStyle = .none
     }
     
     func reloadData() {

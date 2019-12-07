@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import UIKit
 
 protocol MemberViewPresenterViewDelegate: class {
     func reloadData()
@@ -23,9 +24,33 @@ extension MemberViewPresenter {
 }
 
 class MemberViewPresenter {
+    var companyViewModel: CompanyViewModel? {
+        didSet {
+            guard let companyViewModel = companyViewModel  else  { return }
+            memberViewModelList = companyViewModel.memberViewModelList ?? []
+        }
+    }
+    
     var memberViewModelList = [MemberViewModel]()
     var searchResultFiltered = [MemberViewModel]()
     weak var memberViewPresenterViewDelegate: MemberViewPresenterViewDelegate?
+    
+    func getCompanyInfo() -> NSAttributedString {
+        let companyInfo =  NSMutableAttributedString()
+    
+        let companyNameLabel = NSAttributedString(string: "Company name: ", attributes: [NSAttributedString.Key.font: UIFont.boldSystemFont(ofSize: 17)])
+        
+        guard let companyViewModel = companyViewModel else {
+            return companyNameLabel
+        }
+        
+        let companyName = NSAttributedString(string: companyViewModel.companyName, attributes: [NSAttributedString.Key.font: UIFont.systemFont(ofSize: 15)])
+        
+        companyInfo.append(companyNameLabel)
+        companyInfo.append(companyName)
+        
+        return companyInfo
+    }
     
     func getSearchResult(searchText: String) -> [MemberViewModel]  {
         let filteredMemberViewModel = memberViewModelList.filter { (memberViewModel) -> Bool in

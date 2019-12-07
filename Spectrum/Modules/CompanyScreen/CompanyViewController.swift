@@ -32,6 +32,7 @@ class CompanyViewController: UIViewController, CompanyViewPresenterViewDelegate 
         
         title = CompanyPresenterConstants.kTitle
         
+        setupTableView()
         setupSearchBar()
     }
     
@@ -42,6 +43,11 @@ class CompanyViewController: UIViewController, CompanyViewPresenterViewDelegate 
         searchController.obscuresBackgroundDuringPresentation = false
         navigationItem.searchController = searchController
         navigationItem.hidesSearchBarWhenScrolling = true
+    }
+    
+    func setupTableView() {
+        tableViewCompanyList.tableFooterView = UIView()
+        tableViewCompanyList.separatorStyle = .none
     }
     
     func fetchCompanyInfoData() {
@@ -81,7 +87,7 @@ extension CompanyViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let memberViewController = StoryBoards.kMain.instantiateViewController(identifier: ViewControllers.kMemberViewController) as MemberViewController
         
-        memberViewController.memberViewPresenter.memberViewModelList = companyViewPresenter.getCompanyList(isFiltering: isFiltering)[indexPath.row].memberViewModelList ?? []
+        memberViewController.memberViewPresenter.companyViewModel = companyViewPresenter.getCompanyList(isFiltering: isFiltering)[indexPath.row]
         
         self.navigationController?.pushViewController(memberViewController, animated: true)
     }

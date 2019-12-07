@@ -48,6 +48,8 @@ class CompanyTabelCell: UITableViewCell {
         let tapOnLabel = UITapGestureRecognizer(target: self, action: #selector(self.tapActionOnLabel))
         labelCompanyDescription.isUserInteractionEnabled = true
         labelCompanyDescription.addGestureRecognizer(tapOnLabel)
+        
+        setupCardViewEffect()
     }
     
     @objc func tapActionOnFollow(_ sender: UITapGestureRecognizer? = nil) {

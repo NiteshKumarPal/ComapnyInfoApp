@@ -26,7 +26,7 @@
                                             <rect key="frame" x="0.0" y="0.0" width="414" height="142"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="WPi-gh-Iqd" customClass="CustomBorderView" customModule="Spectrum" customModuleProvider="target">
+                                                <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="WPi-gh-Iqd">
                                                     <rect key="frame" x="10" y="5" width="394" height="132"/>
                                                     <subviews>
                                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="FCM-7j-ARF">
@@ -197,9 +197,31 @@
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="WlF-GW-LSS">
                                 <rect key="frame" x="0.0" y="44" width="414" height="818"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <view key="tableHeaderView" contentMode="scaleToFill" id="z3P-4J-2gU">
+                                    <rect key="frame" x="0.0" y="0.0" width="414" height="35"/>
+                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    <subviews>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Company Name:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gpV-KT-3Q6">
+                                            <rect key="frame" x="16" y="0.0" width="388" height="35"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="21" id="Uim-To-Mj3"/>
+                                            </constraints>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                    <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                    <constraints>
+                                        <constraint firstAttribute="trailing" secondItem="gpV-KT-3Q6" secondAttribute="trailing" constant="10" id="9DO-Sp-qaV"/>
+                                        <constraint firstItem="gpV-KT-3Q6" firstAttribute="leading" secondItem="z3P-4J-2gU" secondAttribute="leading" constant="16" id="Hoz-f8-2fr"/>
+                                        <constraint firstAttribute="bottom" secondItem="gpV-KT-3Q6" secondAttribute="bottom" id="sde-63-Eog"/>
+                                        <constraint firstItem="gpV-KT-3Q6" firstAttribute="top" secondItem="z3P-4J-2gU" secondAttribute="top" id="wgc-tn-ywN"/>
+                                    </constraints>
+                                </view>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="MemberTableViewCell" rowHeight="129" id="ffT-5j-Qpb" customClass="MemberTableViewCell" customModule="Spectrum" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="28" width="414" height="129"/>
+                                        <rect key="frame" x="0.0" y="63" width="414" height="129"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="ffT-5j-Qpb" id="Yee-EZ-fba">
                                             <rect key="frame" x="0.0" y="0.0" width="414" height="129"/>
@@ -346,6 +368,7 @@
                         <viewLayoutGuide key="safeArea" id="sin-h5-IPe"/>
                     </view>
                     <connections>
+                        <outlet property="labelCompanyName" destination="gpV-KT-3Q6" id="cp0-Nr-BDA"/>
                         <outlet property="tableViewMemberList" destination="WlF-GW-LSS" id="UwA-4e-VXj"/>
                     </connections>
                 </viewController>

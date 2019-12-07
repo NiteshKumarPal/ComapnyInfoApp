@@ -9,55 +9,45 @@
 import Foundation
 import UIKit
 
-@IBDesignable
-class CustomBorderView: UIView {
-    @IBInspectable var cornerRadius: CGFloat = 0 {
-        didSet {
-            layer.cornerRadius = cornerRadius
-            layer.masksToBounds = cornerRadius > 0
-        }
+extension UITableViewCell {
+    func setupCardViewEffect() {
+       contentView.layer.borderWidth = 0.5
+       contentView.layer.borderColor = UIColor.lightGray.cgColor
+       contentView.layer.masksToBounds = true
+       layer.shadowColor = UIColor.gray.cgColor
+       layer.shadowOffset = CGSize(width: 0, height: 2.0)
+       layer.shadowRadius = 2.0
+       layer.shadowOpacity = 1.0
+       layer.masksToBounds = false
+       layer.shadowPath = UIBezierPath(roundedRect: bounds, cornerRadius: contentView.layer.cornerRadius).cgPath
     }
-    @IBInspectable var borderWidth: CGFloat = 0 {
-        didSet {
-            layer.borderWidth = borderWidth
-        }
-    }
-    @IBInspectable var borderColor: UIColor? {
-        didSet {
-            layer.borderColor = borderColor?.cgColor
-        }
-    }
-    
-    @IBInspectable var shadowOpacity: Float {
-        get {
-            return layer.shadowOpacity
-        }
-        set {
-            layer.shadowOpacity = newValue
-            layer.shadowColor = UIColor.darkGray.cgColor
-        }
-    }
+}
 
-    @IBInspectable var shadowOffset: CGSize {
-        get {
-            return layer.shadowOffset
-        }
-        set {
-            layer.shadowOffset = newValue
-            layer.shadowColor = UIColor.black.cgColor
-            layer.masksToBounds = false
-        }
-    }
-    
-    @IBInspectable var shadowColor: UIColor? {
-           didSet {
-               layer.shadowColor = shadowColor?.cgColor
-           }
-       }
-       
-    @IBInspectable var shadowRadius: CGFloat = 0 {
-        didSet {
-            layer.shadowRadius = shadowRadius
-        }
+class ViewUtility {
+   static func setTitle(title: String, titleColor: UIColor, titleSize: Int, subtitle: String, subtitleColor: UIColor, subtitleSize: Int , view: UIView) -> UIView {
+        let titleLabel = UILabel(frame: CGRect(x:0, y:-5, width: view.frame.width - 100, height: 20))
+
+        titleLabel.backgroundColor = UIColor.clear
+        titleLabel.textColor = titleColor
+        titleLabel.adjustsFontSizeToFitWidth = false
+        titleLabel.font = UIFont.boldSystemFont(ofSize: CGFloat(titleSize))
+        titleLabel.lineBreakMode = .byTruncatingTail
+        titleLabel.textAlignment = .center
+        titleLabel.text = title
+        
+        let subtitleLabel = UILabel(frame: CGRect(x:0, y:18, width: view.frame.width - 100, height: 10))
+        subtitleLabel.backgroundColor = UIColor.clear
+        subtitleLabel.textColor = subtitleColor
+        subtitleLabel.adjustsFontSizeToFitWidth = false
+        subtitleLabel.lineBreakMode = .byTruncatingTail
+        subtitleLabel.textAlignment = .center
+        subtitleLabel.font = UIFont.systemFont(ofSize: CGFloat(subtitleSize))
+        subtitleLabel.text = subtitle
+        
+        let titleView = UIView(frame: CGRect(x:0, y:0, width: view.frame.width - 30, height:30))
+        titleView.addSubview(titleLabel)
+        titleView.addSubview(subtitleLabel)
+
+        return titleView
     }
 }
