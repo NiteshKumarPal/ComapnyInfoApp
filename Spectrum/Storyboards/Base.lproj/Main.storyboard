@@ -325,7 +325,7 @@
                                             <outlet property="labelAge" destination="bIN-kK-Kua" id="WZr-Vi-XNQ"/>
                                             <outlet property="labelEmailId" destination="seg-oh-JuB" id="Qwh-os-GBu"/>
                                             <outlet property="labelName" destination="TVe-nk-qhQ" id="zCp-8z-4Xg"/>
-                                            <outlet property="lablePhoneNumber" destination="XBT-Tz-Qcr" id="6vn-uT-uxh"/>
+                                            <outlet property="labelPhoneNumber" destination="XBT-Tz-Qcr" id="0wg-C7-cR4"/>
                                             <outlet property="viewFavorite" destination="RpQ-d1-Cwl" id="2RU-uB-bY0"/>
                                         </connections>
                                     </tableViewCell>

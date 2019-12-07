@@ -26,10 +26,10 @@ class CompanyTabelCell: UITableViewCell {
         didSet {
             guard let companyViewModel = companyViewModel else { return }
             
-            //labelFollow.text = companyViewModel.followingText
             imageViewFollow.image = companyViewModel.followImage
             labelCompanyName.text = companyViewModel.companyName
             labelCompanyDescription.text = companyViewModel.description
+            labelCompanyDescription.numberOfLines =  companyViewModel.isDescriptionExpanded ? 0 : 3
             imageViewCompanyLogo.loadImage(url: companyViewModel.logo)
             imageFavorite.image = companyViewModel.favoriteImage
         }
@@ -44,6 +44,10 @@ class CompanyTabelCell: UITableViewCell {
         
         let tapOnFavorite = UITapGestureRecognizer(target: self, action: #selector(self.tapActionOnFavorite))
         viewFavorite.addGestureRecognizer(tapOnFavorite)
+        
+        let tapOnLabel = UITapGestureRecognizer(target: self, action: #selector(self.tapActionOnLabel))
+        labelCompanyDescription.isUserInteractionEnabled = true
+        labelCompanyDescription.addGestureRecognizer(tapOnLabel)
     }
     
     @objc func tapActionOnFollow(_ sender: UITapGestureRecognizer? = nil) {
@@ -55,6 +59,13 @@ class CompanyTabelCell: UITableViewCell {
     @objc func tapActionOnFavorite(_ sender: UITapGestureRecognizer? = nil) {
         guard let companyViewModel = companyViewModel else { return }
         companyViewModel.isFavorite = !companyViewModel.isFavorite
+        presenter?.companyViewPresenterViewDelegate?.reloadData()
+    }
+    
+    @objc func tapActionOnLabel(_ sender: UITapGestureRecognizer? = nil) {
+        guard let companyViewModel = companyViewModel else { return }
+        
+        companyViewModel.isDescriptionExpanded = !companyViewModel.isDescriptionExpanded
         presenter?.companyViewPresenterViewDelegate?.reloadData()
     }
 }

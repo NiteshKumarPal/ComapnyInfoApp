@@ -18,6 +18,7 @@ class CompanyViewModel {
     var description = ""
     var website: URL?
     var memberViewModelList: [MemberViewModel]? = []
+    var isDescriptionExpanded = false
     var isFollowing = false {
         didSet {
             updateFollowUIInfo(isFollowed: isFollowing)

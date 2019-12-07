@@ -13,7 +13,7 @@ class MemberTableViewCell: UITableViewCell {
     @IBOutlet weak var labelAge: UILabel!
     @IBOutlet weak var imageFavourateStar: UIImageView!
     @IBOutlet weak var labelEmailId: UILabel!
-    @IBOutlet weak var lablePhoneNumber: UILabel!
+    @IBOutlet weak var labelPhoneNumber: UILabel!
     @IBOutlet weak var viewFavorite: UIView!
     
     static let identifier = "MemberTableViewCell"
@@ -29,24 +29,56 @@ class MemberTableViewCell: UITableViewCell {
             labelName.text = memberViewModel.name
             labelAge.text =  memberViewModel.age
             labelEmailId.text = memberViewModel.email
-            lablePhoneNumber.text = memberViewModel.phone
+            labelPhoneNumber.text = memberViewModel.phone
             imageFavourateStar.image = memberViewModel.favourateImage
         }
     }
     
     override func awakeFromNib() {
-           super.awakeFromNib()
-           // Initialization code
-           
-           let tap = UITapGestureRecognizer(target: self, action: #selector(self.tapAction(_:)))
-           viewFavorite.addGestureRecognizer(tap)
-       }
-       
-    @objc func tapAction(_ sender: UITapGestureRecognizer? = nil) {
+        super.awakeFromNib()
+        // Initialization code
+        
+        let favoriteTap = UITapGestureRecognizer(target: self, action: #selector(self.tapOnFavoriteAction))
+        viewFavorite.addGestureRecognizer(favoriteTap)
+        
+        let mailTap = UITapGestureRecognizer(target: self, action: #selector(self.tapOnMailLinkAction))
+        labelEmailId.isUserInteractionEnabled = true
+        labelEmailId.addGestureRecognizer(mailTap)
+        
+        let phoneTap = UITapGestureRecognizer(target: self, action: #selector(self.tapOnPhoneAction))
+        labelPhoneNumber.isUserInteractionEnabled = true
+        labelPhoneNumber.addGestureRecognizer(phoneTap)
+    }
+    
+    @objc func tapOnFavoriteAction(_ sender: UITapGestureRecognizer? = nil) {
         guard let memberViewModel = memberViewModel else {
             return
         }
         memberViewModel.isFavorite = !memberViewModel.isFavorite
         presenter?.memberViewPresenterViewDelegate?.reloadData()
+    }
+    
+    @objc func tapOnMailLinkAction(_ sender: UITapGestureRecognizer? = nil) {
+        
+        guard let memberViewModel = memberViewModel else {
+            return
+        }
+        
+        if let url = URL(string: "mailto:\(memberViewModel.email)"),
+            UIApplication.shared.canOpenURL(url) {
+            
+            UIApplication.shared.open(url)
+        }
+    }
+    
+    @objc func tapOnPhoneAction(_ sender: UITapGestureRecognizer? = nil) {
+        guard let memberViewModel = memberViewModel else {
+            return
+        }
+        
+        if let url = URL(string: "telprompt:\(memberViewModel.phone)"), UIApplication.shared.canOpenURL(url) {
+            
+            UIApplication.shared.open(url)
+        }
     }
 }

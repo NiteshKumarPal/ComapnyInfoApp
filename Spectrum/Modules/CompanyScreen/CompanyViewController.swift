@@ -9,16 +9,16 @@
 import UIKit
 
 class CompanyViewController: UIViewController, CompanyViewPresenterViewDelegate {
-   
+    
     @IBOutlet weak var tableViewCompanyList: UITableView!
     let searchController = UISearchController()
     
     var isFiltering: Bool {
-      return searchController.isActive && !isSearchBarEmpty || searchController.searchBar.selectedScopeButtonIndex > 0
+        return searchController.isActive && !isSearchBarEmpty || searchController.searchBar.selectedScopeButtonIndex > 0
     }
     
     var isSearchBarEmpty: Bool {
-      return searchController.searchBar.text?.isEmpty ?? true
+        return searchController.searchBar.text?.isEmpty ?? true
     }
     
     var companyViewPresenter = CompanyViewPresenter()
@@ -87,8 +87,8 @@ extension CompanyViewController: UITableViewDelegate, UITableViewDataSource {
     }
     
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
-           searchController.searchBar.resignFirstResponder()
-       }
+        searchController.searchBar.resignFirstResponder()
+    }
 }
 
 extension CompanyViewController: UISearchResultsUpdating {

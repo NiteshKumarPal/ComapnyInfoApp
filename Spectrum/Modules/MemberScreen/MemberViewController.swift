@@ -38,7 +38,7 @@ class MemberViewController: UIViewController, MemberViewPresenterViewDelegate {
     }
     
     func setupSearchBar() {
-        searchController.searchBar.placeholder = CompanyPresenterConstants.kPlaceholderTextcompanyName
+        searchController.searchBar.placeholder = MemberViewPresenterConstants.kPlaceholderTextMemberName
         searchController.searchBar.scopeButtonTitles =
             [MemberViewPresenterConstants.kDefault,
              MemberViewPresenterConstants.kNameUp,

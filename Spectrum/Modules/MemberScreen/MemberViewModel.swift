@@ -25,6 +25,7 @@ struct MemberViewPresenterConstants {
     
     static let kTitle = "Member list"
     
+    static let kPlaceholderTextMemberName = "Search by member name"
     static let kDefault = "Default"
     static let kAgeUp = "Age ▲"
     static let kAgeDown = "Age ▼"
