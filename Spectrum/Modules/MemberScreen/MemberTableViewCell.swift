@@ -78,9 +78,9 @@ class MemberTableViewCell: UITableViewCell {
             return
         }
         
-        if let url = URL(string: "telprompt:\(memberViewModel.phone)"), UIApplication.shared.canOpenURL(url) {
+        if let url = URL(string: "telprompt://\(memberViewModel.phone)"), UIApplication.shared.canOpenURL(url) {
             
-            UIApplication.shared.open(url)
+            UIApplication.shared.open(url, options: [:], completionHandler: nil)
         }
     }
 }

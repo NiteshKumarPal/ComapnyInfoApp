@@ -17,6 +17,7 @@ class CompanyTabelCell: UITableViewCell {
     @IBOutlet weak var imageFavorite: UIImageView!
     @IBOutlet weak var viewFollow: UIView!
     @IBOutlet weak var viewFavorite: UIView!
+    @IBOutlet weak var labelComapnyWebsite: UILabel!
     
     weak var presenter: CompanyViewPresenter?
     
@@ -32,6 +33,7 @@ class CompanyTabelCell: UITableViewCell {
             labelCompanyDescription.numberOfLines =  companyViewModel.isDescriptionExpanded ? 0 : 3
             imageViewCompanyLogo.loadImage(url: companyViewModel.logo)
             imageFavorite.image = companyViewModel.favoriteImage
+            labelComapnyWebsite.text = companyViewModel.website?.absoluteString
         }
     }
     
@@ -45,9 +47,13 @@ class CompanyTabelCell: UITableViewCell {
         let tapOnFavorite = UITapGestureRecognizer(target: self, action: #selector(self.tapActionOnFavorite))
         viewFavorite.addGestureRecognizer(tapOnFavorite)
         
-        let tapOnLabel = UITapGestureRecognizer(target: self, action: #selector(self.tapActionOnLabel))
+        let tapOnLabelCompanyDescription = UITapGestureRecognizer(target: self, action: #selector(self.tapActionOnLabelCompanyDescription))
         labelCompanyDescription.isUserInteractionEnabled = true
-        labelCompanyDescription.addGestureRecognizer(tapOnLabel)
+        labelCompanyDescription.addGestureRecognizer(tapOnLabelCompanyDescription)
+        
+        let tapOnLabelComapnyWebsite = UITapGestureRecognizer(target: self, action: #selector(self.tapActionOnLabelComapnyWebsite))
+        labelComapnyWebsite.isUserInteractionEnabled = true
+        labelComapnyWebsite.addGestureRecognizer(tapOnLabelComapnyWebsite)
         
         setupCardViewEffect()
     }
@@ -64,10 +70,18 @@ class CompanyTabelCell: UITableViewCell {
         presenter?.companyViewPresenterViewDelegate?.reloadData()
     }
     
-    @objc func tapActionOnLabel(_ sender: UITapGestureRecognizer? = nil) {
+    @objc func tapActionOnLabelCompanyDescription(_ sender: UITapGestureRecognizer? = nil) {
         guard let companyViewModel = companyViewModel else { return }
         
         companyViewModel.isDescriptionExpanded = !companyViewModel.isDescriptionExpanded
         presenter?.companyViewPresenterViewDelegate?.reloadData()
+    }
+    
+    @objc func tapActionOnLabelComapnyWebsite(_ sender: UITapGestureRecognizer? = nil) {
+        guard let companyViewModel = companyViewModel else { return }
+    
+        if let link = companyViewModel.website, UIApplication.shared.canOpenURL(link) {
+            UIApplication.shared.open(link)
+        }
     }
 }
