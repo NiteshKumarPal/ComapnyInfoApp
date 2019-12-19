@@ -7,7 +7,7 @@
 //
 
 import XCTest
-@testable import Spectrum
+@testable import ComapnyInfoApp
 
 class SpectrumTests: XCTestCase {
 
