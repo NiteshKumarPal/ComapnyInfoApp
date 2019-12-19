@@ -1,6 +1,6 @@
 //
 //  ViewUtility.swift
-//  Spectrum
+//  CompanyInfoApp
 //
 //  Created by Nitesh Kumar Pal on 07/12/19.
 //  Copyright © 2019 Pioneer. All rights reserved.

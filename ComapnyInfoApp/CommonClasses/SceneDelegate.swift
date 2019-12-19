@@ -1,6 +1,6 @@
 //
 //  SceneDelegate.swift
-//  Spectrum
+//  CompanyInfoApp
 //
 //  Created by Nitesh Kumar Pal on 29/11/19.
 //  Copyright © 2019 Pioneer. All rights reserved.
@@ -48,9 +48,6 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         // to restore the scene back to its current state.
 
         // Save changes in the application's managed object context when the application transitions to the background.
-        (UIApplication.shared.delegate as? AppDelegate)?.saveContext()
     }
-
-
 }
 
