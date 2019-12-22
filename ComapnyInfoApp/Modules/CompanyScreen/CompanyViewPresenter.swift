@@ -23,7 +23,7 @@ extension CompanyViewPresenter {
 
 class CompanyViewPresenter {
     
-    let companyWebService: CompanyWebServiceInterface? = CompanyWebService()
+    var companyWebService: CompanyWebServiceInterface? = CompanyWebService()
     var companyViewModelList = [CompanyViewModel]()
     var searchResultFiltered = [CompanyViewModel]()
     

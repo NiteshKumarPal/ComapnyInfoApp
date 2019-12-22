@@ -15,9 +15,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "9673F1742391993200986D57"
-               BuildableName = "ComapnyInfoApp.app"
-               BlueprintName = "ComapnyInfoApp"
-               ReferencedContainer = "container:ComapnyInfoApp.xcodeproj">
+               BuildableName = "CompanyInfoApp.app"
+               BlueprintName = "CompanyInfoApp"
+               ReferencedContainer = "container:CompanyInfoApp.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -32,20 +32,10 @@
             skipped = "NO">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "9673F18D2391993400986D57"
-               BuildableName = "ComapnyInfoAppTests.xctest"
-               BlueprintName = "ComapnyInfoAppTests"
-               ReferencedContainer = "container:ComapnyInfoApp.xcodeproj">
-            </BuildableReference>
-         </TestableReference>
-         <TestableReference
-            skipped = "NO">
-            <BuildableReference
-               BuildableIdentifier = "primary"
-               BlueprintIdentifier = "9673F1982391993400986D57"
-               BuildableName = "ComapnyInfoAppUITests.xctest"
-               BlueprintName = "ComapnyInfoAppUITests"
-               ReferencedContainer = "container:ComapnyInfoApp.xcodeproj">
+               BlueprintIdentifier = "9659D18223AEAB470090B443"
+               BuildableName = "CompanyInfoAppTests.xctest"
+               BlueprintName = "CompanyInfoAppTests"
+               ReferencedContainer = "container:CompanyInfoApp.xcodeproj">
             </BuildableReference>
          </TestableReference>
       </Testables>
@@ -65,9 +55,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "9673F1742391993200986D57"
-            BuildableName = "ComapnyInfoApp.app"
-            BlueprintName = "ComapnyInfoApp"
-            ReferencedContainer = "container:ComapnyInfoApp.xcodeproj">
+            BuildableName = "CompanyInfoApp.app"
+            BlueprintName = "CompanyInfoApp"
+            ReferencedContainer = "container:CompanyInfoApp.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </LaunchAction>
@@ -82,9 +72,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "9673F1742391993200986D57"
-            BuildableName = "ComapnyInfoApp.app"
-            BlueprintName = "ComapnyInfoApp"
-            ReferencedContainer = "container:ComapnyInfoApp.xcodeproj">
+            BuildableName = "CompanyInfoApp.app"
+            BlueprintName = "CompanyInfoApp"
+            ReferencedContainer = "container:CompanyInfoApp.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </ProfileAction>

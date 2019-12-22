@@ -1,6 +1,6 @@
 //
 //  ViewController.swift
-//  CompanyInfoApp
+//  Spectrum
 //
 //  Created by Nitesh Kumar Pal on 29/11/19.
 //  Copyright © 2019 Pioneer. All rights reserved.
@@ -11,17 +11,17 @@ import UIKit
 class CompanyViewController: UIViewController, CompanyViewPresenterViewDelegate {
     
     @IBOutlet weak var tableViewCompanyList: UITableView!
-    let searchController = UISearchController()
+    private let searchController = UISearchController()
     
-    var isFiltering: Bool {
+    private var isFiltering: Bool {
         return searchController.isActive && !isSearchBarEmpty || searchController.searchBar.selectedScopeButtonIndex > 0
     }
     
-    var isSearchBarEmpty: Bool {
+    private var isSearchBarEmpty: Bool {
         return searchController.searchBar.text?.isEmpty ?? true
     }
     
-    var companyViewPresenter = CompanyViewPresenter()
+    private let companyViewPresenter = CompanyViewPresenter()
     
     override func viewDidLoad() {
         super.viewDidLoad()

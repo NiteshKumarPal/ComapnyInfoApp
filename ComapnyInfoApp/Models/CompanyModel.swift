@@ -19,6 +19,7 @@ struct CompanyInfo: Codable {
     let logo: URL?
     let description: String?
     let website: URL?
+    
     let memberInfoList: [MemberInfo]?
     
     private enum CodingKeys: String, CodingKey {

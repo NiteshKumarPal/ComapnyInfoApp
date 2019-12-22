@@ -12,16 +12,17 @@ class MemberViewController: UIViewController, MemberViewPresenterViewDelegate {
     
     @IBOutlet weak var labelCompanyName: UILabel!
     @IBOutlet weak var tableViewMemberList: UITableView!
-    let searchController = UISearchController()
+    private let searchController = UISearchController()
     
-    var isFiltering: Bool {
+    private var isFiltering: Bool {
         return searchController.isActive && !isSearchBarEmpty || searchController.searchBar.selectedScopeButtonIndex > 0
     }
     
-    var isSearchBarEmpty: Bool {
+    private var isSearchBarEmpty: Bool {
         return searchController.searchBar.text?.isEmpty ?? true
     }
-    var memberViewPresenter = MemberViewPresenter()
+    
+    let memberViewPresenter = MemberViewPresenter()
     
     override func viewDidLoad() {
         super.viewDidLoad()
